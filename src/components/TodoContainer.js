@@ -2,14 +2,15 @@ import React from 'react';
 import TodosList from './TodosList';
 import Header from './Header';
 import InputTodo from './InputTodo';
-// import '../index.css';
 import { v4 as uuidv4 } from 'uuid';
 
+// create a parent component
 class TodoContainer extends React.Component {
+  // add a state that has some static tidos
   state = {
     todos: [
       {
-        id: uuidv4(),
+        id: uuidv4(), // generate a unique id
         title: 'Setup development environment',
         completed: true,
       },
@@ -25,6 +26,7 @@ class TodoContainer extends React.Component {
       },
     ],
   };
+  // updates the state of the checkboxes
   handleChange = (id) => {
     this.setState((prevState) => ({
       todos: prevState.todos.map((todo) => {
@@ -38,6 +40,7 @@ class TodoContainer extends React.Component {
       }),
     }));
   };
+  // deletes tasks
   delTodo = (id) => {
     this.setState({
       todos: [
@@ -47,6 +50,7 @@ class TodoContainer extends React.Component {
       ],
     });
   };
+  // add tasks to state
   addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),

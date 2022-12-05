@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
+// create a component that wil house both the input and tasks
 class TodosList extends React.Component {
   render() {
     return (
